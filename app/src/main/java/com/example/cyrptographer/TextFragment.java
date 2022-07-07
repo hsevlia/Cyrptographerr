@@ -1,0 +1,135 @@
+package com.example.cyrptographer;
+
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link TextFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class TextFragment extends Fragment implements View.OnClickListener {
+
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    public TextFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment TextFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static TextFragment newInstance(String param1, String param2) {
+        TextFragment fragment = new TextFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+
+        }
+
+
+    }
+
+    EditText editText;
+    EditText encrypted;
+    Button encryptbtn;
+    ImageView cpy;
+    ClipboardManager cpb;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_text,container,false);
+
+
+
+        editText = (EditText) v.findViewById(R.id.edittext);
+        encryptbtn = (Button) v.findViewById(R.id.encryptbtn);
+        encrypted = (EditText) v.findViewById(R.id.encrypted);
+        cpy = (ImageView) v.findViewById(R.id.imageView);
+        cpb = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+        encryptbtn.setOnClickListener(this::onClick);
+        cpy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cp2(view);
+            }
+        });
+
+
+        // Inflate the layout for this fragment
+       // return inflater.inflate(R.layout.fragment_text, container, false);
+        return  v;
+    }
+    @Override
+    public void onClick(View view) {
+        enc(view);
+
+    }
+
+    public void enc(View view) {
+        // get text from edittext
+        String temp = editText.getText().toString();
+
+        // pass the string to the encryption
+        // algorithm and get the encrypted code
+        String rv = Encode.encode(temp);
+
+        // set the code to the edit text
+        encrypted.setText(rv);
+    }
+
+    public void cp2(View view) {
+        // get the string from the textview and trim all spaces
+        String data = encrypted.getText().toString().trim();
+        Toast.makeText(getActivity(), "Copied", Toast.LENGTH_SHORT).show();
+        // check if the textview is not empty
+        if (!data.isEmpty()) {
+
+            // copy the text in the clip board
+            ClipData temp = ClipData.newPlainText("text", data);
+            cpb.setPrimaryClip(temp);
+
+            // display message that the text has been copied
+            Toast.makeText(getActivity(), "Copied", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+}

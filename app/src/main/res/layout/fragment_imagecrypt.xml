@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Imagecrypt">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/selectimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/quicksandmedium"
+            android:text="Select Image"
+            android:textColor="@color/teal_700"
+            android:textSize="24dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/frame"
+            android:layout_marginTop="70dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:textAlignment="textStart"
+                android:id="@+id/fileName"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/show"/>
+
+
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:id="@+id/selectIMAGE"
+                android:layout_gravity="right"
+
+                android:layout_marginRight="10dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_attach_file_24" />
+
+
+        </FrameLayout>
+
+       <!-- <Button
+            android:id="@+id/imgencrypt"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_below="@id/frame"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Encrypt"
+            android:textSize="16dp" />-->
+
+
+        <TextView
+            android:id="@+id/encryptimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/quicksandmedium"
+            android:text="Encrepted File"
+            android:textColor="@color/teal_700"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/encryptedimg"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@id/encryptimg"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/show"
+            android:padding="10dp" />
+
+
+        <Button
+            android:id="@+id/copyimg"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_below="@id/encryptedimg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Copy"
+            android:textSize="16dp" />
+
+
+
+
+
+
+    </RelativeLayout>
+    <!-- TODO: Update blank fragment layout -->
+
+</FrameLayout>

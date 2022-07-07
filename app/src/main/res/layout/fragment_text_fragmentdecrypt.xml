@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".textFragmentdecrypt">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/quicksandmedium"
+        android:text="Encrypted "
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/edittextD"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/show"
+        android:hint="Type Here"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/purple_500" />
+
+    <Button
+        android:id="@+id/encryptbtnDD"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_below="@id/edittextD"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Decrypt"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittextD"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="40dp"
+        android:src="@drawable/copy" />
+
+    <EditText
+        android:id="@+id/encryptedD"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/encryptbtnDD"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/show"
+        android:padding="20dp"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/quicksandmedium"
+        android:text="Original"
+android:layout_below="@id/encryptbtnDD"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

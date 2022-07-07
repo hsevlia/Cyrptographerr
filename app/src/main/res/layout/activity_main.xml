@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#84CFCF"
+    tools:context=".MainActivity"
+    android:theme="@style/Theme.Design.NoActionBar">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="13dp"
+        android:fontFamily="@font/quicksandlight"
+        android:padding="8dp"
+        android:text="Cryptographer"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="50dp" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/heading_border"
+        android:padding="40dp"
+        android:id="@+id/logo"
+        android:src="@drawable/logo" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/quicksandlight"
+        android:text="Encrypt Decrypt your Data"
+        android:textColor="#0E4751"
+        android:padding="5dp"
+        android:layout_marginLeft="40dp"
+
+        android:textSize="15dp" />
+
+</RelativeLayout>
